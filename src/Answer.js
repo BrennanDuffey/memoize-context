@@ -8,14 +8,6 @@ class Answer extends Component {
     }
   }
 
-  // handleClick = () => {
-  //   if (this.props.correctAnswer === this.props.answer) {
-  //     let correctAnswers = this.props.correctAnswers;
-  //     correctAnswers.push(this.props.id);
-  //     this.props.updateCorrectAnswers(correctAnswers)
-  //   }
-  // }
-
   render() {
     return (
       <p onClick={
