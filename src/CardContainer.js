@@ -1,24 +1,37 @@
 import React, { Component } from 'react';
-import Card from './Card.js';
+import QuestionCard from './QuestionCard.js';
+import AnswerCard from './AnswerCard.js';
 
 class CardContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       cardCounter: 0,
-      isInbetweenRounds: false
+      showAnswer: false,
+      isCorrect: false
     }
   }
 
-  toggleInbetweenRounds = () => {
+  updateIsCorrect = (boolean) => {
     this.setState({
-      isInbetweenRounds: !this.state.isInbetweenRounds
+      isCorrect: boolean
     })
+  }
+
+  toggleShowAnswer = () => {
+    this.setState({
+      showAnswer: !this.state.showAnswer
+    });
   }
 
   updateCounter = () => {
     let newCounter = this.state.cardCounter + 1;
     this.setState({cardCounter: newCounter});
+  }
+
+  nextQuestion = () => {
+    this.updateCounter();
+    this.toggleShowAnswer();
   }
 
   render () {
@@ -29,15 +42,17 @@ class CardContainer extends Component {
           <button onClick={this.updateCounter}> Start </button>
         </section>
       )
-    } else if (this.state.isInbetweenRounds) {
-      <section>
-        
-        <button onClick={this.updateCounter}> Start Next Round </button>
-      </section>
+    } else if (this.state.showAnswer) {
+      return (
+        <section>
+          <AnswerCard {...this.props.questions[this.state.cardCounter-1]}/>
+          <button onClick={this.nextQuestion}> Start Next Round </button>
+        </section>
+      )
     } else {
       return (
         <section>
-          <Card {...this.props.questions[this.state.cardCounter-1]} updateCounter={this.updateCounter}/>
+          <QuestionCard {...this.props.questions[this.state.cardCounter-1]} toggleShowAnswer={this.toggleShowAnswer} updateIsCorrect={this.updateIsCorrect}/>
         </section>
       )
     }

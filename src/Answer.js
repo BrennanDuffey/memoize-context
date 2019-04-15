@@ -7,16 +7,20 @@ class Answer extends Component {
 
     }
   }
-  handleClick = () => {
-    this.props.updateCounter()
-    if (this.props.correctAnswer === this.props.answer) {
-      this.props.updateState()
-    }
-  }
+  // handleClick = () => {
+  //   if (this.props.correctAnswer === this.props.answer) {
+  //     this.props.updateState()
+  //   }
+  // }
 
   render() {
     return (
-      <p onClick={this.handleClick}>{this.props.answer}</p>
+      <p onClick={
+        () => {
+          this.props.toggleShowAnswer();
+          this.props.updateIsCorrect(this.props.correctAnswer === this.props.answer);
+        }
+      }>{this.props.answer}</p>
     )  
   }
 }
