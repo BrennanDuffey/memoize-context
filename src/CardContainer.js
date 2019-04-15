@@ -76,6 +76,12 @@ class CardContainer extends Component {
           <button onClick={this.nextQuestion}> Next Question </button>
         </section>
       )
+    } else if (this.state.cardCounter = 31) {
+      return (
+        <section>
+          <h3>Quiz completed!</h3>
+        </section>
+      )
     } else {
       return (
         <section>
