@@ -73,13 +73,13 @@ class CardContainer extends Component {
         <section>
           <img src={response} />
           <AnswerCard {...this.props.questions[this.state.cardCounter-1]}/>
-          <button onClick={this.nextQuestion}> Next Question </button>
+          <button onClick={this.nextQuestion}> Next </button>
         </section>
       )
-    } else if (this.state.cardCounter = 31) {
+    } else if (this.state.cardCounter === 32) {
       return (
         <section>
-          <h3>Quiz completed!</h3>
+          <h2>Quiz completed!</h2>
         </section>
       )
     } else {
