@@ -38,42 +38,42 @@ const questions = [
     "question": "When ship.blastOff() is called. What will be the value of this that is console logged?",
     "answers": ["The window object.", "The ship object.", "Instance of RocketShip."],
     "correctAnswer": "The ship object.",
-    // "codeSnippet": null,
+    "codeSnippet": "https://i.imgur.com/z19z60g.png",
     "id": 6
   },
   {
     "question": "When blastOff() is evoked. What will be the value of this that is console logged?",
     "answers": ["The window object.", "The ship object.", "Instance of RocketShip."],
     "correctAnswer": "The window object.",
-    // "codeSnippet": null,,
+    "codeSnippet": "https://i.imgur.com/z19z60g.png",
     "id": 7
   },
   {
     "question": "If ship.blastOff is console logged what will the value of this be?",
     "answers": ["The window object.", "The ship object.", "Instance of RocketShip."],
     "correctAnswer": "Instance of RocketShip.",
-    // "codeSnippet": null,
+    "codeSnippet": "https://i.imgur.com/lAmTiE9.png",
     "id": 8
   },
   {
     "question": "When an application is running in strict mode and the first two rules do not apply. What will the value of this be?",
     "answers": ["The window object.", "The global object.", "Undefined."],
     "correctAnswer": "Undefined.",
-    // "codeSnippet": null,
+    "codeSnippet": null,
     "id": 9
   },
   {
     "question": "What is the value of `this` when a user clicks on our button element?",
     "answers": ["The window object.", "The ship object.", "The button element."],
     "correctAnswer": "The button element.",
-    // "codeSnippet": null,
+    "codeSnippet": "https://i.imgur.com/iVGU70Y.png",
     "id": 10
   },
   {
     "question": "What is the value of `this` when a user clicks on our button element?",
     "answers": ["The window object.", "The ship object.", "The button element."],
     "correctAnswer": "The window object.",
-    // "codeSnippet": null,
+    "codeSnippet": "https://i.imgur.com/VQAcDyY.png",
     "id": 11
   },
   {
@@ -112,10 +112,10 @@ const questions = [
     "id": 16
   },
   {
-    "question": "When the function fn is invoked what will it return?",
+    "question": "When the function is declared and called in the global context?",
     "answers": ["2000", "The global window object.", "Undefined"],
     "correctAnswer": "Undefined",
-    // "codeSnippet": null,
+    "codeSnippet": "https://i.imgur.com/qzAJ2Mq.png",
     "id": 17
   },
   {
@@ -131,21 +131,92 @@ const questions = [
     "correctAnswer": "It sets the value of this for every iteration",
     "codeSnippet": null,
     "id": 19
+  },
+  {
+    "question": "What will the value of this be during every iteration?",
+    "answers": ["The array students.", "The global window object.", "Each student object."],
+    "correctAnswer": "The array students.",
+    "codeSnippet": "https://i.imgur.com/Ur56bUy.png",
+    "id": 20
+  },
+  {
+    "question": "What will the value of this be during every iteration?",
+    "answers": ["The array students.", "The global object.", "Each student object."],
+    "correctAnswer": "The global object",
+    "codeSnippet": "https://i.imgur.com/X6npGtM.png",
+    "id": 21
+  },
+  {
+    "question": "What will this be bound to when doge.waitPatiently() is called?",
+    "answers": ["Any dog objects that exist.", "The global object.", "That instance of Dog."],
+    "correctAnswer": "The doge instance of Dog.",
+    "codeSnippet": "https://i.imgur.com/yhguT5l.png",
+    "id": 22
+  },
+  {
+    "question": "Will the following code work when the button is clicked?",
+    "answers": ["Yes!", "No!"],
+    "correctAnswer": "No!",
+    "codeSnippet": "https://i.imgur.com/MhiRKWj.png",
+    "id": 23
+  },
+  {
+    "question": "Will the following code work when the button is clicked?",
+    "answers": ["Yes!", "No!"],
+    "correctAnswer": "Yes!",
+    "codeSnippet": "https://i.imgur.com/PFUdcSQ.png",
+    "id": 24
+  },
+  {
+    "question": "When the above function is declared and invoked in the global context. What will be returned?",
+    "answers": ["The function fn.", "The global object.", "Undefined."],
+    "correctAnswer": "Undefined.",
+    "codeSnippet": "https://i.imgur.com/ySWhc0T.png",
+    "id": 25
+  },
+  {
+    "question": "When a function is called with the new operator. What will be the value of this in the function?",
+    "answers": ["The first instance created", "The global object", "The specific instance of the object created."],
+    "correctAnswer": "The specific instance of the object created.",
+    "codeSnippet": null,
+    "id": 26
+  },
+  {
+    "question": "When makeNoises is declared and invoked in a browsers console what will be logged?",
+    "answers": ["My name is robert but I go by Robbie", "My name is  but I go by Robbie", "My name is Bobo but I go by Robbie"],
+    "correctAnswer": "My name is  but I go by Robbie",
+    "codeSnippet": "https://i.imgur.com/bailuRC.png",
+    "id": 27
+  },
+  {
+    "question": "If the above code is run in a browsers console what will be logged?",
+    "answers": ["My name is robert but I go by Robbie", "My name is  but I go by Robbie", "My name is Bobo but I go by Robbie"],
+    "correctAnswer": "My name is Bobo but I go by Robbie",
+    "codeSnippet": "https://i.imgur.com/gWZ630a.png",
+    "id": 28
+  },
+  {
+    "question": "If the above code is run in a browsers console what will be logged?",
+    "answers": ["My name is robert but I go by Robbie", "My name is  but I go by Robbie", "My name is Bobo but I go by Robbie"],
+    "correctAnswer": "My name is Bobo but I go by Robbie",
+    "codeSnippet": "https://i.imgur.com/gOrFAFB.png",
+    "id": 29
+  },
+  {
+    "question": "If the above code is run in a browsers console what will be logged?",
+    "answers": ["My name is robert but I go by Robbie", "My name is  but I go by Robbie", "My name is Bobo but I go by Robbie"],
+    "correctAnswer": "My name is  but I go by Robbie",
+    "codeSnippet": "https://i.imgur.com/DOozeUN.png",
+    "id": 30
+  },
+  {
+    "question": "If the above code is run in a browsers console what will be logged?",
+    "answers": ["My name is robert but I go by Robbie", "My name is  but I go by Robbie", "My name is Bobo but I go by Robbie"],
+    "correctAnswer": "My name is Bobo but I go by Robbie",
+    "codeSnippet": "https://i.imgur.com/sRDluFG.png",
+    "id": 31
   }
-  // {
-  //   "question": "Often when looking at docs on MDN for iterative array prototype methods you will see a thisArg optional argument. What is the function of the argument?",
-  //   "answers": ["It sets the value of this for every iteration", "The global window object.", "It allows the value of this to change through each iteration"],
-  //   "correctAnswer": "It sets the value of this for every iteration",
-  //   "codeSnippet": null,
-  //   "id": 20
-  // },
-  // {
-  //   "question": "Often when looking at docs on MDN for iterative array prototype methods you will see a thisArg optional argument. What is the function of the argument?",
-  //   "answers": ["It sets the value of this for every iteration", "The global window object.", "It allows the value of this to change through each iteration"],
-  //   "correctAnswer": "It sets the value of this for every iteration",
-  //   "codeSnippet": null,
-  //   "id": 21
-  // },
-]
+];
+
 
 module.exports = questions
