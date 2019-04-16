@@ -16,7 +16,7 @@ class QuestionCard extends Component {
       codeSnippet = <img src={this.props.codeSnippet}/>
     }
     return (
-      <article>
+      <article className="question-card">
         {codeSnippet}
         <h3>{this.props.question}</h3>
         {this.props.answers.map((answer, index) => {

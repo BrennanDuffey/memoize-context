@@ -63,14 +63,14 @@ class CardContainer extends Component {
     }
     if(!this.state.cardCounter) {
       return (
-        <section>
+        <section className="flash-card">
           <h2>Hello and Welcome to Context Quiz please press the start button to begin</h2>
           <button onClick={this.updateCounter}> Start </button>
         </section>
       )
     } else if (this.state.showAnswer) {
       return (
-        <section>
+        <section className="flash-card">
           <img src={response} />
           <AnswerCard {...this.props.questions[this.state.cardCounter-1]}/>
           <button onClick={this.nextQuestion}> Next </button>
@@ -78,13 +78,13 @@ class CardContainer extends Component {
       )
     } else if (this.state.cardCounter === 32) {
       return (
-        <section>
+        <section className="flash-card">
           <h2>Quiz completed!</h2>
         </section>
       )
     } else {
       return (
-        <section>
+        <section className="flash-card">
           <QuestionCard {...this.props.questions[this.state.cardCounter-1]} 
                         toggleShowAnswer={this.toggleShowAnswer} 
                         updateIsCorrect={this.updateIsCorrect} 
