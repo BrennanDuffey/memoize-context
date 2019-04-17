@@ -13,7 +13,7 @@ class QuestionCard extends Component {
   render() {
     let codeSnippet;
     if (this.props.codeSnippet) {
-      codeSnippet = <img src={this.props.codeSnippet} height="350px" width="70%"/>
+      codeSnippet = <img src={this.props.codeSnippet} height="350px" width="70%" alt="code snippet"/>
     }
     return (
       <article className="question-card">

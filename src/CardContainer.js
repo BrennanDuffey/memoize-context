@@ -60,10 +60,13 @@ class CardContainer extends Component {
 
   render () {
     let response;
+    let altText;
     if (this.state.isCorrect) {
       response = 'https://media.giphy.com/media/PS7d4tm1Hq6Sk/giphy.gif';
+      altText = 'That is Correct gif';
     } else {
       response = 'https://media.giphy.com/media/1455m6M8jFgCE8/giphy.gif';
+      altText = 'That is Incorrect gif'
     }
     if(!this.state.cardCounter) {
       return (
@@ -75,7 +78,7 @@ class CardContainer extends Component {
     } else if (this.state.showAnswer) {
       return (
         <section className="flash-card">
-          <img src={response} height="40%" width="40%"/>
+          <img src={response} alt={altText} height="40%" width="40%"/>
           <AnswerCard {...this.props.questions[this.state.cardCounter-1]}/>
           <button onClick={this.nextQuestion}> Next </button>
         </section>
@@ -97,8 +100,9 @@ class CardContainer extends Component {
                     this.resetCounter();
                     this.resetLocalStorage();
                     window.location.reload();
-                } 
-              }}
+                  } 
+                }
+              }
               >Reset Game</p>
             <p className="question" role="button" tabIndex="0"
               onClick={ () => {
