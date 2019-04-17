@@ -42,6 +42,14 @@ class CardContainer extends Component {
     });
   };
 
+  resetCounter = () => {
+    this.setState({cardCounter: 0})
+  }
+
+  resetLocalStorage = () => {
+    localStorage.clear()
+  }
+
   updateCounter = () => {
     let newCounter = this.state.cardCounter + 1;
     this.setState({cardCounter: newCounter});
@@ -81,8 +89,18 @@ class CardContainer extends Component {
         <section className="flash-card">
           <h1>Quiz completed!</h1>
           <div>
-            <p className="question" role="button" tabIndex="0">Reset Game</p>
-            <p className="question" role="button" tabIndex="0">Try Missed Questions</p>
+            <p className="question" role="button" tabIndex="0" 
+              onClick={ () => {
+                this.resetCounter();
+                this.resetLocalStorage();
+                window.location.reload();
+              }}
+              >Reset Game</p>
+            <p className="question" role="button" tabIndex="0"
+              onClick={ () => {
+                this.resetCounter();
+              }}
+            >Try Missed Questions</p>
           </div>
         </section>
       )

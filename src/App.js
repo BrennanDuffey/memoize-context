@@ -16,13 +16,9 @@ class App extends Component {
       .then(response => response.json())
       .then(data => this.setState( {questions: data.questions}, () => {
         this.getLocalStorage();
-        // this.setFilteredQuestions();
       }
       ))
       .catch(err => console.log(err))
-
-    this.getLocalStorage();
-    // this.setFilteredQuestions();
   }
 
   getLocalStorage = () => {
@@ -31,18 +27,7 @@ class App extends Component {
     }
   }
 
-  // setFilteredQuestions = () => {
-  //   let filteredQuestions = this.state.filteredQuestions.splice();
-  //   this.state.questions.forEach(question => {
-  //     for (let i = 0; i < this.state.correctQuestions; i++) {
-  //       if (this.state.correctQuestions[i].id !== question.id) {
-  //         filteredQuestions.push(question)
-  //         break
-  //       }
-  //     }
-  //   })
-  //   this.setState({filteredQuestions: filteredQuestions})
-  // }
+
 
   render() {
     return (
