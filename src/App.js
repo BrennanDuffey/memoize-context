@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount = () => {
     fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/brennanduffey/questions')
       .then(response => response.json())
-      .then(data => this.setState( {questions: data.questions} ), () => {console.log(this.state.questions)})
+      .then(data => this.setState( {questions: data.questions} ))
       .catch(err => console.log(err))
 
     this.getLocalStorage()
