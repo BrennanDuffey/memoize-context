@@ -10,7 +10,16 @@ class Answer extends Component {
 
   render() {
     return (
-      <p onClick={
+      <p className="question" role="button" tabIndex="0"
+        onKeyDown={
+          (e) => {
+            if (e.keyCode === 13 ) {
+              this.props.toggleShowAnswer();
+              this.props.updateIsCorrect(this.props.correctAnswer === this.props.answer);
+            } 
+        }
+      }
+      onClick={
         () => {
           this.props.toggleShowAnswer();
           this.props.updateIsCorrect(this.props.correctAnswer === this.props.answer);
