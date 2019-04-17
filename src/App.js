@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import questions from './api.js';
 import CardContainer from './CardContainer.js';
 
 
