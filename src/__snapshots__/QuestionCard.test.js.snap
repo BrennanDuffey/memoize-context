@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Answer components Should render correctly with all the information passed 1`] = `
+<article
+  className="question-card"
+>
+  <h2>
+    When the context of this is described what is context actually?
+  </h2>
+  <Answer
+    answer="The scope that this is invoked in."
+    correctAnswer="The object that is executing the javascript code."
+    key="0"
+    toggleShowAnswer={[MockFunction]}
+    updateCorrectAnswers={[MockFunction]}
+    updateIsCorrect={[MockFunction]}
+  />
+  <Answer
+    answer="Whatever this is bound to."
+    correctAnswer="The object that is executing the javascript code."
+    key="1"
+    toggleShowAnswer={[MockFunction]}
+    updateCorrectAnswers={[MockFunction]}
+    updateIsCorrect={[MockFunction]}
+  />
+  <Answer
+    answer="The object that is executing the javascript code."
+    correctAnswer="The object that is executing the javascript code."
+    key="2"
+    toggleShowAnswer={[MockFunction]}
+    updateCorrectAnswers={[MockFunction]}
+    updateIsCorrect={[MockFunction]}
+  />
+</article>
+`;

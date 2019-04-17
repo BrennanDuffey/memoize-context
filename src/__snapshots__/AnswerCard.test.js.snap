@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Answer components Should render correctly with all the information passed 1`] = `
+<article>
+  <h2>
+    Correct Answer: 
+  </h2>
+</article>
+`;

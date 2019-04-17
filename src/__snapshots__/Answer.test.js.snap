@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Answer components Should render correctly with all the information passed 1`] = `
+<p
+  className="question"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  Undefined.
+</p>
+`;
