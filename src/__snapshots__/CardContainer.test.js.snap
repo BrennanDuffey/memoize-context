@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Answer components Conditional rendering Should render based off cardCounter = questions.length + 1 1`] = `
+<section
+  className="flash-card"
+>
+  <h1>
+    Hello and Welcome to Context Quiz please press the start button to begin
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+     Start 
+  </button>
+</section>
+`;
+
+exports[`Answer components Conditional rendering Should render based off cardCounter > 0 1`] = `
+<section
+  className="flash-card"
+>
+  <h1>
+    Hello and Welcome to Context Quiz please press the start button to begin
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+     Start 
+  </button>
+</section>
+`;
+
+exports[`Answer components Conditional rendering Should render differently if state of show answer is true 1`] = `
+<section
+  className="flash-card"
+>
+  <h1>
+    Hello and Welcome to Context Quiz please press the start button to begin
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+     Start 
+  </button>
+</section>
+`;
+
+exports[`Answer components Should render correctly with all the information passed 1`] = `
+<section
+  className="flash-card"
+>
+  <h1>
+    Hello and Welcome to Context Quiz please press the start button to begin
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+     Start 
+  </button>
+</section>
+`;

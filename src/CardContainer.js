@@ -9,8 +9,7 @@ class CardContainer extends Component {
       cardCounter: 0,
       showAnswer: false,
       isCorrect: false,
-      incorrectAnswers: [],
-      filteredQuestions: this.props.questions
+      incorrectAnswers: []
     }
   };
 
@@ -19,12 +18,6 @@ class CardContainer extends Component {
       isCorrect: boolean
     });
   };
-
-  updateFilteredQuestions = () => {
-    let filteredQuestions = this.state.filteredQuestions
-      .filter(question => JSON.parse(localStorage.getItem('correct answers').includes(question)))
-    this.setState({filteredQuestions: filteredQuestions}, () => {console.log(this.state.filteredQuestions)})
-  }
 
   updateCorrectAnswers = () => {
     let incorrectAnswers = this.state.incorrectAnswers;
