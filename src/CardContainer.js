@@ -9,7 +9,7 @@ class CardContainer extends Component {
       cardCounter: 0,
       showAnswer: false,
       isCorrect: false,
-      correctAnswers: [],
+      incorrectAnswers: [],
       filteredQuestions: this.props.questions
     }
   };
@@ -27,12 +27,12 @@ class CardContainer extends Component {
   }
 
   updateCorrectAnswers = () => {
-    let correctAnswers = this.state.correctAnswers;
-    if(this.state.isCorrect) {
-      correctAnswers.push(this.props.questions[this.state.cardCounter-1])
+    let incorrectAnswers = this.state.incorrectAnswers;
+    if(!this.state.isCorrect) {
+      incorrectAnswers.push(this.props.questions[this.state.cardCounter-1])
     }
-    this.setState({correctAnswers: correctAnswers}, () => {
-      localStorage.setItem('correct answers', JSON.stringify(this.state.correctAnswers))
+    this.setState({incorrectAnswers: incorrectAnswers}, () => {
+      localStorage.setItem('incorrect answers', JSON.stringify(this.state.incorrectAnswers))
     });
   }
 
@@ -64,22 +64,26 @@ class CardContainer extends Component {
     if(!this.state.cardCounter) {
       return (
         <section className="flash-card">
-          <h2>Hello and Welcome to Context Quiz please press the start button to begin</h2>
+          <h1>Hello and Welcome to Context Quiz please press the start button to begin</h1>
           <button onClick={this.updateCounter}> Start </button>
         </section>
       )
     } else if (this.state.showAnswer) {
       return (
         <section className="flash-card">
-          <img src={response} />
+          <img src={response} height="40%" width="40%"/>
           <AnswerCard {...this.props.questions[this.state.cardCounter-1]}/>
           <button onClick={this.nextQuestion}> Next </button>
         </section>
       )
-    } else if (this.state.cardCounter === 32) {
+    } else if (this.state.cardCounter === this.props.questions.length + 1) {
       return (
         <section className="flash-card">
-          <h2>Quiz completed!</h2>
+          <h1>Quiz completed!</h1>
+          <div>
+            <p className="question" role="button" tabIndex="0">Reset Game</p>
+            <p className="question" role="button" tabIndex="0">Try Missed Questions</p>
+          </div>
         </section>
       )
     } else {

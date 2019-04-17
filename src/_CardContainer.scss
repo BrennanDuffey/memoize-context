@@ -1,6 +1,22 @@
 .flash-card {
+  color: #2F2159;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top:140px
+  padding: 150px 175px 700px;
+  text-align: center;
+}
+
+button {
+  &:focus {
+    outline: 0px;
+    box-shadow: 2px 1.25px 2px 1px;
+    border-radius: 3%;
+  }
+
+  &:hover {
+    outline: 0px;
+    box-shadow: 2px 1.25px 2px 1px;
+    border-radius: 3%;
+  }
 }

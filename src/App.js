@@ -7,30 +7,47 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      questions: [],
-      correctQuestions: []
+      questions: []
     }
   }
 
   componentDidMount = () => {
     fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/brennanduffey/questions')
       .then(response => response.json())
-      .then(data => this.setState( {questions: data.questions} ))
+      .then(data => this.setState( {questions: data.questions}, () => {
+        this.getLocalStorage();
+        // this.setFilteredQuestions();
+      }
+      ))
       .catch(err => console.log(err))
 
-    this.getLocalStorage()
+    this.getLocalStorage();
+    // this.setFilteredQuestions();
   }
 
   getLocalStorage = () => {
-   if(localStorage.getItem('correct answers')) {
-     this.setState({ correctQuestions: JSON.parse(localStorage.getItem('correct answers')) });
-   }
+   if(localStorage.getItem('incorrect answers')) {
+     this.setState({ questions: JSON.parse(localStorage.getItem('incorrect answers')) });
+    }
   }
+
+  // setFilteredQuestions = () => {
+  //   let filteredQuestions = this.state.filteredQuestions.splice();
+  //   this.state.questions.forEach(question => {
+  //     for (let i = 0; i < this.state.correctQuestions; i++) {
+  //       if (this.state.correctQuestions[i].id !== question.id) {
+  //         filteredQuestions.push(question)
+  //         break
+  //       }
+  //     }
+  //   })
+  //   this.setState({filteredQuestions: filteredQuestions})
+  // }
 
   render() {
     return (
       <div className="App">
-        <CardContainer questions={this.state.questions}/>
+        <CardContainer questions={this.state.questions} getLocalStorage={this.getLocalStorage}/>
       </div>
     );
   }
