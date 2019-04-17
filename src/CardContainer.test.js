@@ -94,6 +94,23 @@ describe('Answer components', () => {
     expect(wrapper.state().cardCounter).toEqual(0);
     wrapper.instance().nextQuestion()
     expect(wrapper.state().cardCounter).toEqual(1);
+  });
 
-  })
+  describe('Conditional rendering', () => {
+    
+    it('Should render based off cardCounter > 0', () => {
+      wrapper.state().cardCounter = 1;
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('Should render based off cardCounter = questions.length + 1', () => {
+      wrapper.state().cardCounter = 3;
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('Should render differently if state of show answer is true', () => {
+      wrapper.state().showAnswer = true;
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
 });
