@@ -13,12 +13,12 @@ class QuestionCard extends Component {
   render() {
     let codeSnippet;
     if (this.props.codeSnippet) {
-      codeSnippet = <img src={this.props.codeSnippet}/>
+      codeSnippet = <img src={this.props.codeSnippet} height="350px" width="70%"/>
     }
     return (
       <article className="question-card">
+        <h2>{this.props.question}</h2>
         {codeSnippet}
-        <h3>{this.props.question}</h3>
         {this.props.answers.map((answer, index) => {
           return <Answer answer={answer} 
                          key={index} 

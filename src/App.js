@@ -7,30 +7,32 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      questions: [],
-      correctQuestions: []
+      questions: []
     }
   }
 
   componentDidMount = () => {
     fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/brennanduffey/questions')
       .then(response => response.json())
-      .then(data => this.setState( {questions: data.questions} ))
+      .then(data => this.setState( {questions: data.questions}, () => {
+        this.getLocalStorage();
+      }
+      ))
       .catch(err => console.log(err))
-
-    this.getLocalStorage()
   }
 
   getLocalStorage = () => {
-   if(localStorage.getItem('correct answers')) {
-     this.setState({ correctQuestions: JSON.parse(localStorage.getItem('correct answers')) });
-   }
+   if(localStorage.getItem('incorrect answers')) {
+     this.setState({ questions: JSON.parse(localStorage.getItem('incorrect answers')) });
+    }
   }
+
+
 
   render() {
     return (
       <div className="App">
-        <CardContainer questions={this.state.questions}/>
+        <CardContainer questions={this.state.questions} getLocalStorage={this.getLocalStorage}/>
       </div>
     );
   }

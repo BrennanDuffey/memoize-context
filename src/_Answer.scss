@@ -1,5 +1,18 @@
 .question {
   color: #2F2159;
-  box-shadow: 1px 0.25px 4px -1px;
-  border-radius: 5%;
+  box-shadow: 1px 0.25px 4px 0px;
+  border-radius: 2%;
+  margin: 15px 0 0;
+
+  &:focus {
+    outline: 0px;
+    box-shadow: 2px 1.25px 2px 1px;
+    border-radius: 2%;
+  }
+
+  &:hover {
+    outline: 0px;
+    box-shadow: 2px 1.25px 2px 1px;
+    border-radius: 2%;
+  }
 }
