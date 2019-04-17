@@ -43,7 +43,10 @@ class CardContainer extends Component {
   };
 
   resetCounter = () => {
-    this.setState({cardCounter: 0})
+    this.setState({
+      cardCounter: 0,
+      incorrectAnswers: []
+    })
   }
 
   resetLocalStorage = () => {
@@ -95,10 +98,28 @@ class CardContainer extends Component {
                 this.resetLocalStorage();
                 window.location.reload();
               }}
+              onKeyDown={
+                (e) => {
+                  if (e.keyCode === 13 ) {
+                    this.resetCounter();
+                    this.resetLocalStorage();
+                    window.location.reload();
+                } 
+              }}
               >Reset Game</p>
             <p className="question" role="button" tabIndex="0"
               onClick={ () => {
+                this.props.getLocalStorage();
+                this.resetLocalStorage();
                 this.resetCounter();
+              }}
+              onKeyDown={
+                (e) => {
+                  if (e.keyCode === 13 ) {
+                    this.props.getLocalStorage();
+                    this.resetLocalStorage();
+                    this.resetCounter();
+                } 
               }}
             >Try Missed Questions</p>
           </div>
