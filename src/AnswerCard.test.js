@@ -17,6 +17,6 @@ describe('Answer components', () => {
   });
 
   it('Should render correctly with all the information passed', () => {
-      expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
